@@ -1,10 +1,10 @@
 <template>
-  <div class="card-body">
+  <div class="card-body" :class="{ 'content-hidden': visible === false }">
     <div class="card-top">
       <inline-svg class="card-logo" :src="require('@/assets/svg/patricia-logo.svg')"></inline-svg>
       <button class="visibility-toggle" @click="toggleVisibility">
-        <inline-svg class="visbility-toggle-icon" v-show="visible === true" :src="require('@/assets/svg/eye-open.svg')"></inline-svg>
         <inline-svg class="visbility-toggle-icon" v-show="visible === false" :src="require('@/assets/svg/eye-close.svg')"></inline-svg>
+        <inline-svg class="visbility-toggle-icon" v-show="visible === true" :src="require('@/assets/svg/eye-open.svg')"></inline-svg>
       </button>
     </div>
 
@@ -76,7 +76,7 @@ export default {
   justify-content: space-between;
   font-family: 'Graphik';
   background-color: $p-black;
-  background-image: url('../assets/svg/patricia-icon.svg');
+  background-image: url('../assets/images/patricia-icon-small.png');
   background-repeat: no-repeat;
   background-size: contain;
   color: $p-smoke;
@@ -85,6 +85,10 @@ export default {
   height: 200px;
   max-width: 327px;
   margin: auto;
+
+  &.content-hidden {
+    background-image: url('../assets/images/patricia-icon-large.png');
+  }
 }
 
 .card-top {
@@ -122,7 +126,7 @@ export default {
 
 .card-number {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 2px;
   color: $p-smoke;
 }
@@ -141,6 +145,7 @@ export default {
   display: flex;
   align-items: center;
 }
+
 .card-date {
   display: flex;
   align-items: center;
@@ -148,13 +153,14 @@ export default {
   &-text {
     color: $p-smoke-dark;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 7px;
     font-size: 0.25rem;
   }
   &-number {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 }
+
 .card-cvv {
   display: flex;
   align-items: center;
@@ -162,11 +168,11 @@ export default {
   &-text {
     color: $p-smoke-dark;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 7px;
     font-size: 0.25rem;
   }
   &-number {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     width: 25px;
   }
 }
@@ -199,8 +205,8 @@ export default {
     &-text {
       color: $p-smoke-dark;
       display: inline-block;
-      margin-right: 5px;
-      font-size: 0.5rem;
+      margin-right: 12px;
+      font-size: 0.42rem;
     }
     &-number {
       font-size: 0.97rem;
@@ -213,8 +219,8 @@ export default {
     &-text {
       color: $p-smoke-dark;
       display: inline-block;
-      margin-right: 5px;
-      font-size: 0.5rem;
+      margin-right: 12px;
+      font-size: 0.49rem;
     }
     &-number {
       font-size: 0.97rem;
